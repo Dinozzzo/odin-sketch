@@ -1,6 +1,6 @@
 const body = document.querySelector("body");
 body.style.cssText = `
-background-color: rgb(244, 194, 194);`;
+background-color:rgb(224, 207, 149);`;
 
 const header = document.createElement("div");
 header.style.cssText = `
@@ -16,7 +16,7 @@ body.appendChild(header);
 const title = document.createElement("h1");
 title.textContent = `Etch-a-Sketch`;
 title.style.cssText = `
-color: rgb(128, 0, 32);
+color: rgb(107, 81, 42);
 `;
 header.appendChild(title);
 
@@ -30,7 +30,9 @@ margin-bottom: 25px`;
 body.appendChild(buttonBar);
 
 const sizeChoice = document.createElement("button");
-sizeChoice.textContent = `Side size`;
+sizeChoice.textContent = `Scale`;
+sizeChoice.style.cssText = `
+font-size: 25px`;
 buttonBar.appendChild(sizeChoice);
 
 const main = document.createElement("div");
@@ -47,8 +49,8 @@ display: flex;
 flex-wrap: wrap;
 width: 640px;
 height: 640px;
-border: 5px solid rgb(128, 0, 32);
-background-color: rgb(244, 194, 194);
+border: 5px solid rgb(107, 81, 42);
+background-color: rgb(255, 255, 255);
 `;
 main.appendChild(container);
 
@@ -59,7 +61,7 @@ width: 40px;
 height: 40px;
 `;
   square.addEventListener("mouseover", () => {
-    square.style.backgroundColor = "red";
+    square.style.backgroundColor = "rgb(107, 81, 42";
   });
   container.appendChild(square);
 }
