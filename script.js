@@ -1,6 +1,7 @@
 const body = document.querySelector("body");
 body.style.cssText = `
-background-color:rgb(224, 207, 149);`;
+background-color:rgb(224, 207, 149);
+margin: 0;`;
 
 const header = document.createElement("div");
 header.style.cssText = `
@@ -29,12 +30,6 @@ align-items: center;
 margin-bottom: 25px`;
 body.appendChild(buttonBar);
 
-const sizeChoice = document.createElement("button");
-sizeChoice.textContent = `Scale`;
-sizeChoice.style.cssText = `
-font-size: 25px`;
-buttonBar.appendChild(sizeChoice);
-
 const main = document.createElement("div");
 main.style.cssText = `
 display: flex;
@@ -54,14 +49,24 @@ background-color: rgb(255, 255, 255);
 `;
 main.appendChild(container);
 
-for (let i = 0; i < 256; i++) {
-  const square = document.createElement("div");
-  square.style.cssText = `
-width: 40px;
-height: 40px;
-`;
-  square.addEventListener("mouseover", () => {
-    square.style.backgroundColor = "rgb(107, 81, 42";
-  });
-  container.appendChild(square);
-}
+function createGrid(size) {}
+// for (let i = 0; i < 251; i++) {
+//   const square = document.createElement("div");
+//   square.style.cssText = `
+// width: 40px;
+// height: 40px;
+// `;
+//   square.addEventListener("mouseover", () => {
+//     square.style.backgroundColor = "rgb(107, 81, 42";
+//   });
+//   container.appendChild(square);
+// }
+
+// const sizeChoice = document.createElement("button");
+// sizeChoice.textContent = `Scale`;
+// sizeChoice.style.cssText = `
+// font-size: 25px`;
+// buttonBar.appendChild(sizeChoice);
+// sizeChoice.addEventListener("click", () => {
+//   prompt(`Choose a scale.`);
+// });
