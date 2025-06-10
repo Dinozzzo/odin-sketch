@@ -4,8 +4,7 @@ background-color: rgb(244, 194, 194);`;
 
 const header = document.createElement("div");
 header.style.cssText = `
-width: 100%;
-height: 150px;
+height: 125px;
 display: flex;
 justify-content: center;
 align-items: center;
@@ -21,39 +20,46 @@ color: rgb(128, 0, 32);
 `;
 header.appendChild(title);
 
-// const leftDiv = createElement("div");
-// const rightDiv = createElement("div");
+const buttonBar = document.createElement("div");
+buttonBar.style.cssText = `
+height: 40px;
+display: flex;
+justify-content: center;
+align-items: center;
+margin-bottom: 25px`;
+body.appendChild(buttonBar);
 
-// leftDiv.style.cssText = `
-// width: 500px;`;
+const sizeChoice = document.createElement("button");
+sizeChoice.textContent = `Side size`;
+buttonBar.appendChild(sizeChoice);
 
-// rightDiv.style.cssText = `
-// width: auto`;
+const main = document.createElement("div");
+main.style.cssText = `
+display: flex;
+justify-content: center;
+align-items: center;
+`;
+body.appendChild(main);
 
-// body.appendChild(leftDiv);
-// body.appendChild(rightDiv);
+const container = document.querySelector(".container");
+container.style.cssText = `
+display: flex;
+flex-wrap: wrap;
+width: 640px;
+height: 640px;
+border: 5px solid rgb(128, 0, 32);
+background-color: rgb(244, 194, 194);
+`;
+main.appendChild(container);
 
-// rightDiv.appendChild(container);
-
-// const container = document.querySelector(".container");
-
-//container.style.cssText = `
-// display: flex;
-// flex-wrap: wrap;
-// width: 640px;
-// height: 640px;
-// border: 5px solid rgb(128, 0, 32);
-// background-color: rgb(244, 194, 194);`;
-
-// for (let i = 0; i < 256; i++) {
-//   const square = document.createElement("div");
-//   square.style.cssText = `
-// width: 40px;
-// height: 40px;
-// `;
-//   container.appendChild(square);
-
-//   square.addEventListener("mouseover", () => {
-//     square.style.backgroundColor = "red";
-//   });
-// }
+for (let i = 0; i < 256; i++) {
+  const square = document.createElement("div");
+  square.style.cssText = `
+width: 40px;
+height: 40px;
+`;
+  square.addEventListener("mouseover", () => {
+    square.style.backgroundColor = "red";
+  });
+  container.appendChild(square);
+}
