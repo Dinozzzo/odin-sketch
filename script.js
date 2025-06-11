@@ -49,7 +49,7 @@ background-color: rgb(255, 255, 255);
 `;
 main.appendChild(container);
 
-function originalSquale() {
+function originalScale() {
   for (let i = 0; i < 256; i++) {
     const square = document.createElement("div");
     square.style.cssText = `
@@ -63,21 +63,21 @@ height: 40px;
   }
 }
 
-originalSquale();
+originalScale();
 
-const squale = document.createElement("button");
-squale.textContent = `Choose a squale.`;
-squale.addEventListener("click", () => {
+const scale = document.createElement("button");
+scale.textContent = `Choose a scale.`;
+scale.addEventListener("click", () => {
   container.innerHTML = "";
-  let userSquale = prompt(`What squale do you choose, between 1 to 64?`);
-  if (userSquale > 64) {
-    alert(`Squale can't be over 64`);
-    originalSquale();
+  let userScale = prompt(`Choose a scale between 1 to 64?`);
+  if (userScale > 64) {
+    alert(`Scale can't be over 64`);
+    originalScale();
   } else {
-    let calc = 640 / userSquale;
-    let iSquale = userSquale * userSquale;
-    console.log(userSquale);
-    for (let i = 0; i < iSquale; i++) {
+    let calc = 640 / userScale;
+    let iScale = userScale * userScale;
+    console.log(userScale);
+    for (let i = 0; i < iScale; i++) {
       const square = document.createElement("div");
       square.style.cssText = `
     width: ${calc}px;
@@ -90,4 +90,4 @@ squale.addEventListener("click", () => {
     }
   }
 });
-buttonBar.appendChild(squale);
+buttonBar.appendChild(scale);
