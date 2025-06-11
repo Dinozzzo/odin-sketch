@@ -49,24 +49,45 @@ background-color: rgb(255, 255, 255);
 `;
 main.appendChild(container);
 
-function createGrid(size) {}
-// for (let i = 0; i < 251; i++) {
-//   const square = document.createElement("div");
-//   square.style.cssText = `
-// width: 40px;
-// height: 40px;
-// `;
-//   square.addEventListener("mouseover", () => {
-//     square.style.backgroundColor = "rgb(107, 81, 42";
-//   });
-//   container.appendChild(square);
-// }
+function originalSquale() {
+  for (let i = 0; i < 256; i++) {
+    const square = document.createElement("div");
+    square.style.cssText = `
+width: 40px;
+height: 40px;
+`;
+    square.addEventListener("mouseover", () => {
+      square.style.backgroundColor = "rgb(107, 81, 42)";
+    });
+    container.appendChild(square);
+  }
+}
 
-// const sizeChoice = document.createElement("button");
-// sizeChoice.textContent = `Scale`;
-// sizeChoice.style.cssText = `
-// font-size: 25px`;
-// buttonBar.appendChild(sizeChoice);
-// sizeChoice.addEventListener("click", () => {
-//   prompt(`Choose a scale.`);
-// });
+originalSquale();
+
+const squale = document.createElement("button");
+squale.textContent = `Choose a squale.`;
+squale.addEventListener("click", () => {
+  container.innerHTML = "";
+  let userSquale = prompt(`What squale do you choose, between 1 to 80?`);
+  if (userSquale >= 80) {
+    alert(`Squale can't be over 80`);
+    originalSquale();
+  } else {
+    let calc = 640 / userSquale;
+    let iSquale = userSquale * userSquale;
+    console.log(userSquale);
+    for (let i = 0; i < iSquale; i++) {
+      const square = document.createElement("div");
+      square.style.cssText = `
+    width: ${calc}px;
+    height: ${calc}px;
+    `;
+      square.addEventListener("mouseover", () => {
+        square.style.backgroundColor = "rgb(107, 81, 42)";
+      });
+      container.appendChild(square);
+    }
+  }
+});
+buttonBar.appendChild(squale);
