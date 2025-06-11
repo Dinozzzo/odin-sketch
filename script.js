@@ -52,6 +52,7 @@ main.appendChild(container);
 function originalScale() {
   for (let i = 0; i < 256; i++) {
     const square = document.createElement("div");
+    square.classList.add("square");
     square.style.cssText = `
 width: 40px;
 height: 40px;
@@ -79,6 +80,7 @@ scale.addEventListener("click", () => {
     console.log(userScale);
     for (let i = 0; i < iScale; i++) {
       const square = document.createElement("div");
+      square.classList.add("square");
       square.style.cssText = `
     width: ${calc}px;
     height: ${calc}px;
@@ -91,3 +93,18 @@ scale.addEventListener("click", () => {
   }
 });
 buttonBar.appendChild(scale);
+
+const rainbowButton = document.createElement("button");
+rainbowButton.textContent = `Rainbow Colors`;
+rainbowButton.addEventListener("click", () => {
+  const allSquares = container.querySelectorAll(".square");
+  allSquares.forEach((square) => {
+    square.addEventListener("mouseover", () => {
+      let r = Math.floor(Math.random() * 256);
+      let g = Math.floor(Math.random() * 256);
+      let b = Math.floor(Math.random() * 256);
+      square.style.backgroundColor = `rgb(${r}, ${g}, ${b})`;
+    });
+  });
+});
+buttonBar.appendChild(rainbowButton);
