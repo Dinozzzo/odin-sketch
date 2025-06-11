@@ -69,9 +69,9 @@ const squale = document.createElement("button");
 squale.textContent = `Choose a squale.`;
 squale.addEventListener("click", () => {
   container.innerHTML = "";
-  let userSquale = prompt(`What squale do you choose, between 1 to 80?`);
-  if (userSquale >= 80) {
-    alert(`Squale can't be over 80`);
+  let userSquale = prompt(`What squale do you choose, between 1 to 64?`);
+  if (userSquale > 64) {
+    alert(`Squale can't be over 64`);
     originalSquale();
   } else {
     let calc = 640 / userSquale;
